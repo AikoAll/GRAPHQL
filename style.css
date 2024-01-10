@@ -1,0 +1,190 @@
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+#login-container {
+    position: absolute;
+    top: 25%;
+    align-self: center;
+    animation: fadeIn 250ms ease-in forwards;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+#login-form input {
+    height: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.loginTitle {
+    margin: 0 0 1rem 0;
+    font-weight: 800;
+    color: #333;
+    user-select: none;
+}
+
+#login-submit {
+    border-radius: 10px;
+    box-shadow: 0rem 0rem .7rem rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: .5rem 1rem;
+    margin: 1rem 0 0 0;
+    background-color: #ff7f50;
+    color: white;
+    width: fit-content;
+    align-self: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#login-submit:hover {
+    background-color: #ff6347;
+    color: #fff;
+}
+
+.parent {
+    padding: 40px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 13rem 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-template-areas: "welcome welcome" "userInfo auditRatio" "xp skills";
+    width: 100%;
+}
+
+.parent>* {
+    opacity: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.parent :nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.parent :nth-child(2) {
+    animation-delay: 250ms;
+}
+
+.parent :nth-child(3) {
+    animation-delay: 500ms;
+}
+
+.parent :nth-child(4) {
+    animation-delay: 750ms;
+}
+
+.parent :nth-child(5) {
+    animation-delay: 1000ms;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.welcome {
+    grid-area: welcome;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.welcome button {
+    border-radius: 10px;
+    box-shadow: 0rem 0rem .7rem rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: .5rem 1rem;
+    margin: 1rem 0 0 0;
+    background-color: #ff7f50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.welcome button:active {
+    color: #333;
+    background-color: transparent;
+}
+
+.userInfo {
+    grid-area: userInfo;
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfo ul {
+    margin: 1rem;
+    padding: 0;
+}
+
+.userInfo li {
+    margin-top: .2rem;
+    list-style: none;
+}
+
+.auditRatio {
+    grid-area: auditRatio;
+}
+
+.xp {
+    grid-area: xp;
+}
+
+.xp button {
+    border-radius: 10px;
+    box-shadow: 0rem 0rem .7rem rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: .5rem 1rem;
+    margin: 1rem 0 0 0;
+    background-color: #ff7f50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.xp button:active {
+    color: #333;
+    background-color: transparent;
+}
+
+.skills {
+    grid-area: skills;
+}
+
+.skills svg {
+    display: block;
+}
+
+.skills text {
+    font-size: 6pt;
+}
+
+h1 {
+    text-align: center;
+}
