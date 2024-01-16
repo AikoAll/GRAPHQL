@@ -30,19 +30,24 @@ const login = () => {
 
 const logout = () => {
     isLoggedIn = false;
+    clearUserData(); // Clear user data from the DOM
+    localStorage.removeItem('jwt_token'); // Clear the JWT token
     updateUI();
+};
+const clearUserData = () => {
+    const body = document.querySelector('body');
+    const main = document.querySelector('main');
+    if (main) {
+        body.removeChild(main);
+    }
 };
 
 const updateUI = () => {
     const loginContainer = getElement('login-container');
     toggleVisibility(loginContainer, isLoggedIn);
+    
     if (!isLoggedIn) {
-        const body = document.querySelector('body');
-        const main = document.querySelector('main');
-        if (main) {
-            body.removeChild(main);
-        }
-        localStorage.removeItem('jwt_token');
+        clearUserData(); // Clear user data from the DOM when logging out
     }
 };
 
